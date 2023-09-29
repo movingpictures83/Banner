@@ -1,0 +1,2 @@
+Prefix plugins/Banner/example/
+Plugin Banner inputfile none outputfile none
