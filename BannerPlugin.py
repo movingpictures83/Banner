@@ -7,7 +7,7 @@
 #   Please cite the author(s) in any work or product based on this material.
 #
 #   OBJECTIVE:
-#	The purpose of this file is to implement helper functions and miscellaneous utility methods that are used by Flint.
+#	The purpose of this file is to implement helper functions and miscellaneous utility methods that are used by .
 #
 #
 #   NOTES:
@@ -68,23 +68,23 @@ class BannerPlugin:
     return i + 1
 
 
-   def getFlintVersion(self):
+   def getVersion(self):
     """
-    Returns the current version number of Flint.
+    Returns the current version number of .
     """
     return self.__VERSION__
 
 
-   def getFlintBuildNumber(self):
+   def getBuildNumber(self):
     """
-    Returns the current build number of Flint.
+    Returns the current build number of .
     """
     return self.__BUILD_NUMBER__
 
    def printPrettyHeader(self):
     """"
         Prints a nice-looking header for displaying in a Terminal.
-        Flint header made with MonoDraw on macOS.
+         header made with MonoDraw on macOS.
         https://monodraw.helftone.com
         :)
     """
@@ -92,7 +92,7 @@ class BannerPlugin:
     sys.stdout.flush()
 
     print(" ───────────────────────────────────────────────────────────────────────────────")
-    print("    _______        _____ __   _ _______            Version " + self.getFlintVersion() + "." + self.getFlintBuildNumber())
+    print("    _______        _____ __   _ _______            Version " + self.getVersion() + "." + self.getBuildNumber())
     print("    |______ |        |   | \  |    |                       BioRG");
     print("    |       |_____ __|__ |  \_|    |                School of Computing")
     print("                                                 and Information Sciences")
