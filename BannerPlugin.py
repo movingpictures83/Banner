@@ -34,12 +34,14 @@ import os, sys
 import time
 import multiprocessing
 
-__VERSION__ = "RC3"
-__BUILD_NUMBER__ = "B20190715"
 
 # --------------------------------------------------- Functions -------------------------------------------------------
 
-def get_number_of_cpus() :
+
+
+
+class BannerPlugin:
+   def get_number_of_cpus(self) :
 
     """
     Gets the number of CPUs that the current machine has available.
@@ -52,7 +54,7 @@ def get_number_of_cpus() :
 
 
 
-def get_number_of_lines_in_file(fileName):
+   def get_number_of_lines_in_file(self,fileName):
 
     """
     Gets the number of lines in a file.
@@ -66,21 +68,20 @@ def get_number_of_lines_in_file(fileName):
     return i + 1
 
 
-def getFlintVersion():
+   def getFlintVersion(self):
     """
     Returns the current version number of Flint.
     """
-    return __VERSION__
+    return self.__VERSION__
 
 
-def getFlintBuildNumber():
+   def getFlintBuildNumber(self):
     """
     Returns the current build number of Flint.
     """
-    return __BUILD_NUMBER__
+    return self.__BUILD_NUMBER__
 
-
-def printFlintPrettyHeader():
+   def printPrettyHeader(self):
     """"
         Prints a nice-looking header for displaying in a Terminal.
         Flint header made with MonoDraw on macOS.
@@ -91,7 +92,7 @@ def printFlintPrettyHeader():
     sys.stdout.flush()
 
     print(" ───────────────────────────────────────────────────────────────────────────────")
-    print("    _______        _____ __   _ _______            Version " + getFlintVersion() + "." + getFlintBuildNumber())
+    print("    _______        _____ __   _ _______            Version " + self.getFlintVersion() + "." + self.getFlintBuildNumber())
     print("    |______ |        |   | \  |    |                       BioRG");
     print("    |       |_____ __|__ |  \_|    |                School of Computing")
     print("                                                 and Information Sciences")
@@ -101,15 +102,15 @@ def printFlintPrettyHeader():
 
 
 
-class BannerPlugin:
-    def input(self, infile):
+   def input(self, infile):
+       self.__VERSION__ = "RC3"
+       self.__BUILD_NUMBER__ = "B20190715"
+
+   def run(self):
         pass
 
-    def run(self):
-        pass
-
-    def output(self, outfile):
-        printFlintPrettyHeader()
+   def output(self, outfile):
+        self.printPrettyHeader()
 
 
 
